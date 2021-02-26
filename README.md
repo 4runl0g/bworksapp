@@ -35,4 +35,4 @@ JSON util to read json files
 2. TestNG suite xml
 
 ## src/test/resources packages:
-Testcases in JSON format 
+Testcases in JSON format
