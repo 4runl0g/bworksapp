@@ -37,4 +37,4 @@ JSON util to read json files
 ## src/test/resources packages:
 Testcases in JSON format
 
-[Semantic description of image](/framework_architecture.png "Framework Architecture")
+![Semantic description of image](/framework_architecture.png "Framework Architecture")
