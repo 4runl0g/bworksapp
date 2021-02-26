@@ -1,4 +1,4 @@
-Selenium Automation Framework - Hybrid framework using TestNG
+Hybrid framework using TestNG
 --
 
 This Automation Framework is a combination of Hybrid, Data driven & Keyword driven using json file as dataprovider.
