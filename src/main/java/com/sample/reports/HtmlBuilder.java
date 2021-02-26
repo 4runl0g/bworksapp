@@ -34,7 +34,6 @@ public class HtmlBuilder {
 
     public void prepareTracker(File htmlFile) {
         createLiveLogsFiles(htmlFile);
-        createTrackerTemplate(htmlFile);
 //        try {
 //            Desktop.getDesktop().browse(htmlFile.toURI());
 //        } catch (IOException e) {
@@ -73,7 +72,7 @@ public class HtmlBuilder {
                         "        ],\n" +
                         "    } );\n" +
                         "} );</script></html>")
-                .append("<body><h3 align=\"center\"><b><img src=\"https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png\" width=\"50\" height=\"50\">Test Cases Results</b></h3>")
+                .append("<body><h3 align=\"center\"><b><img src=\"https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png\" width=\"50\" height=\"50\">Test Results</b></h3>")
                 .append("<table id=\"example\" class=\"display responsive\" style=\"width:100%\">")
                 .append("<thead><tr><th></th><th style=\"text-align: center\">Execution Time</th><th style=\"text-align: center\">Test Suite</th><th style=\"text-align: center\">Test Case</th><th style=\"text-align: center\">Test Parameters</th><th style=\"text-align: center\">Status</th>")
                 .append("<th style=\"text-align: center\">Error Message</th><th style=\"text-align: center\">Stack Trace Exception</th></tr></thead><tbody>")
@@ -97,7 +96,7 @@ public class HtmlBuilder {
         writeToFile(htmlFile, completedText, true);
     }
 
-    public void writeResultsToFile(File htmlFile, File testCaseTrackerHtmlFile, ITestResult result, String timeNow, String status) {
+    public void writeResultsToFile(File htmlFile, ITestResult result, String timeNow, String status) {
         StringBuilder builder = new StringBuilder();
 
         String resultStatus;
@@ -143,20 +142,8 @@ public class HtmlBuilder {
                 .append(String.format("<td style=\"text-align: left;word-wrap: break-word;white-space: normal\"><font size=\"2\">%s</font></td>",testParams))
                 .append(resultStatus)
                 .append(String.format("<td style=\"text-align: left;word-wrap: break-word;white-space: normal; color: #B22222\"><font size=\"2\"><i>%s</i></font></td>",errorMessage))
-                .append(String.format("<td style=\"text-align: left;word-wrap: break-word;white-space: normal; color: #B22222\"><font size=\"2\"><i><a href=%s>Testcase Detailed Log</a><br>%s</i></font></td>",testCaseTrackerHtmlFile,shortStackTraceErrorMessage))
+                .append(String.format("<td style=\"text-align: left;word-wrap: break-word;white-space: normal; color: #B22222\"><font size=\"2\"><i><br>%s</i></font></td>",shortStackTraceErrorMessage))
                 .append("</tr>");
-        writeToFile(htmlFile, builder.toString(), true);
-    }
-
-    public void createTrackerTemplate(File htmlFile) {
-        StringBuilder builder = new StringBuilder();
-        builder
-                .append("<html><title>Runtime Logs</title><meta http-equiv=\"refresh\" content=\"\" >")
-                .append("</html>")
-                .append("<body><h3 align=\"center\"><b><img src=\"https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png\" width=\"50\" height=\"50\"> Event Tracker</b></h3>")
-                .append("<table id=\"example\" class=\"display responsive\" style=\"width:100%\">")
-                .append("<thead><tr><th></th><th style=\"text-align: center\">Events</th><th style=\"text-align: center\">API</th><th style=\"text-align: center\">DataFactory</th><th style=\"text-align: center\">Request Params</th><th style=\"text-align: center\">Response Params</th></tr></thead><tbody>")
-                .append("");
         writeToFile(htmlFile, builder.toString(), true);
     }
 }

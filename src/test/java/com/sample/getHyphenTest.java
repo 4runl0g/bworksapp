@@ -43,7 +43,6 @@ public class getHyphenTest {
     @BeforeSuite(alwaysRun = true)
     public void preRequisiteTestData() {
         new LiveLogsListener().prepareLogReport(new File(LOG_FILE));
-        new LiveLogsListener().prepareTracker(new File(TEST_CASE_TRACKER));
     }
 
     @BeforeTest
@@ -77,7 +76,7 @@ public class getHyphenTest {
     @AfterMethod
     public void getResult(ITestResult result) {
         RuntimeLogStatus.Status status = new RuntimeLogStatus().logTestResult(result);
-        new LiveLogsListener().writeResultsToFile(new File(LOG_FILE), new File(TEST_CASE_TRACKER), result, new Date().toString(), status.toString());
+        new LiveLogsListener().writeResultsToFile(new File(LOG_FILE), result, new Date().toString(), status.toString());
     }
 
 }

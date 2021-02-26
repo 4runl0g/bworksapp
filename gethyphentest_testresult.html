@@ -1,0 +1,43 @@
+<html><title>Runtime Logs</title><meta http-equiv="refresh" content="" ><link rel="icon" href="https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png" class="next-head"/><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+<script>$(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: {
+            details: {
+                type: 'column'
+            }
+        },
+        columnDefs: [ {
+            className: 'control',
+            orderable: false,
+            targets:   0
+        },
+         {
+            className: 'none',
+            targets: -1
+            }
+        ],
+    } );
+} );</script></html><body><h3 align="center"><b><img src="https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png" width="50" height="50">Test Results</b></h3><table id="example" class="display responsive" style="width:100%"><thead><tr><th></th><th style="text-align: center">Execution Time</th><th style="text-align: center">Test Suite</th><th style="text-align: center">Test Case</th><th style="text-align: center">Test Parameters</th><th style="text-align: center">Status</th><th style="text-align: center">Error Message</th><th style="text-align: center">Stack Trace Exception</th></tr></thead><tbody><tr><td></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">Fri Feb 26 22:47:12 IST 2021</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">getHyphenTest</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">createPost</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">[com.sample.dataprovider.TestDataFactory@3c5a727f]</font></td><td style="color: #B22222"><b>FAIL</b></td><td style="text-align: left;word-wrap: break-word;white-space: normal; color: #B22222"><font size="2"><i>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0</i></font></td><td style="text-align: left;word-wrap: break-word;white-space: normal; color: #B22222"><font size="2"><i><br>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248)
+	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at com.sun.proxy.$Proxy13.get(Unknown Source)
+	at com.sample.pages.CreateNewPostPage.enterTextToWritePost(CreateNewPostPage.java:109)
+	at com.sample.pages.CreateNewPostPage.writePost(CreateNewPostPage.java:133)
+	at com.sample.getHyphenTest.createPost(getHyphenTest.java:70)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+... Removed 12 stack frames</i></font></td></tr><tr><td></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">Fri Feb 26 22:47:15 IST 2021</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">getHyphenTest</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">createPost</font></td><td style="text-align: left;word-wrap: break-word;white-space: normal"><font size="2">[com.sample.dataprovider.TestDataFactory@28e2f4b9]</font></td><td style="color: #006400"><b>PASS</b></td><td style="text-align: left;word-wrap: break-word;white-space: normal; color: #B22222"><font size="2"><i></i></font></td><td style="text-align: left;word-wrap: break-word;white-space: normal; color: #B22222"><font size="2"><i><br></i></font></td></tr>
