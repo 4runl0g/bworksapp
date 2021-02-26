@@ -38,9 +38,6 @@ public class getHyphenTest {
     }
 
     //Create new post by passing type and category via testcase
-    /*  1.
-
-     */
     @Test(dataProvider = "createPostData")
     public void createPost(TestDataFactory dataFactory) {
 //        String webURL = Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("web_url");

@@ -3,18 +3,32 @@
     {
       "testCaseId": "GetHyphen01",
       "testCaseName": "createPost",
-      "testCaseDescription": "Verify expected languages are present in drop down menu on login page",
+      "testCaseDescription": "Create new post for OPEN type and ARNAUD category",
       "testCaseParameters": {
-          "category": "Official",
+          "category": "Anonymous",
           "types": {
-            "typeName": "Multiple Choice",
-            "options": {
-              "option1": "Content 01",
-              "option2": "Content 02",
-              "option3": "Content 03"
-            }
+            "typeName": "Open",
+            "options": {}
           },
-          "group": "Women in Business"
+          "group": "Arnaud"
+      },
+      "execute": true
+    },
+    {
+      "testCaseId": "GetHyphen02",
+      "testCaseName": "createPost",
+      "testCaseDescription": "Create new post for MULTIPLE CHOICE type and OFFICIAL category",
+      "testCaseParameters": {
+        "category": "Official",
+        "types": {
+          "typeName": "Multiple Choice",
+          "options": {
+            "option1": "Content 01",
+            "option2": "Content 02",
+            "option3": "Content 03"
+          }
+        },
+        "group": "Chat with Maegan"
       },
       "execute": true
     }
