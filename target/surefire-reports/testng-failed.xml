@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [com.sample.getHyphenTest]" verbose="0">
+  <test thread-count="5" name="Command line test(failed)" verbose="0">
+    <classes>
+      <class name="com.sample.getHyphenTest">
+        <methods>
+          <include name="createPost" invocation-numbers="1 0"/>
+          <include name="launch"/>
+        </methods>
+      </class> <!-- com.sample.getHyphenTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [com.sample.getHyphenTest] -->

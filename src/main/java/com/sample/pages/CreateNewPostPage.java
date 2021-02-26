@@ -105,7 +105,6 @@ public class CreateNewPostPage {
     public void enterTextToWritePost(String content, String type, JSONObject optionsObj) {
         if (type.equalsIgnoreCase("Open")) {
             writePostTextField.get(0).sendKeys(content);
-            System.out.println(optionsObj.length());
         } else {
             writePostTextField.get(0).sendKeys(content);
             for (int i=0;i<optionsObj.length();i++) {
