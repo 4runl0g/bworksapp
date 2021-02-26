@@ -1,0 +1,27 @@
+# Usage:
+#   docker-compose up --force-recreate
+version: '2.1'
+
+services:
+    #--------------#
+    zalenium:
+        image: "dosel/zalenium"
+        container_name: selenium
+        hostname: selenium
+        tty: true
+        volumes:
+            - /tmp/videos:/home/seluser/videos
+            - /var/run/docker.sock:/var/run/docker.sock
+            - /usr/bin/docker:/usr/bin/docker
+        ports:
+            - 4444:4444
+        command: >
+            start --desiredContainers 1
+                  --maxDockerSeleniumContainers 5
+        environment:
+            - HOST_UID
+            - HOST_GID
+            - SAUCE_USERNAME
+            - SAUCE_ACCESS_KEY
+            - BROWSER_STACK_USER
+            - BROWSER_STACK_KEY

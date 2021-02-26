@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="com.sample.getHyphenTest" verbose="1" parallel="methods" thread-count="4">
+    <parameter name="web_url" value="https://app.gethyphen.com/"/>
+    <parameter name="email_id" value="hyphen_admin@acmetest.com"/>
+    <parameter name="code" value="34067"/>
+    <test name="com.sample.getHyphenTest">
+        <classes>
+            <class name="com.sample.getHyphenTest"/>
+        </classes>
+    </test>
+</suite>
