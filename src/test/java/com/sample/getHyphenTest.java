@@ -4,15 +4,20 @@ import com.sample.dataprovider.TestDataFactory;
 import com.sample.driverfactory.ChromeDriverConfig;
 import com.sample.pages.CreateNewPostPage;
 import com.sample.pages.DashboardPage;
+import com.sample.reports.LiveLogsListener;
+import com.sample.reports.RuntimeLogStatus;
 import com.sample.utils.JsonUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 import com.sample.pages.LoginPage;
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Date;
 import java.util.Iterator;
 
 public class getHyphenTest {
@@ -22,6 +27,9 @@ public class getHyphenTest {
     private String emailId = "hyphen_admin@acmetest.com";
     private String code = "34067";
 
+    String LOG_FILE = this.getClass().getSimpleName().toLowerCase()+"_testresult.html";
+    String TEST_CASE_TRACKER = this.getClass().getSimpleName().toLowerCase()+"_fullstack_trace.html";
+
     public static final String GetHyphenTestcase_JSON_FILE_PATH = System.getProperty("user.dir")
             + "/src/test/resources/GetHyphenTestcase.json";
 
@@ -30,6 +38,12 @@ public class getHyphenTest {
     public Iterator<Object[]> getTestcaseData(Method m) throws IOException {
         System.out.println(m.getName());
         return new JsonUtil().setTestData(GetHyphenTestcase_JSON_FILE_PATH, m.getName());
+    }
+
+    @BeforeSuite(alwaysRun = true)
+    public void preRequisiteTestData() {
+        new LiveLogsListener().prepareLogReport(new File(LOG_FILE));
+        new LiveLogsListener().prepareTracker(new File(TEST_CASE_TRACKER));
     }
 
     @BeforeTest
@@ -59,4 +73,11 @@ public class getHyphenTest {
         Assert.assertEquals(dashboardPage.verifyCreatedPostText().toLowerCase(),dataFactory.getTestCaseId().toLowerCase());
         driver.close();
     }
+
+    @AfterMethod
+    public void getResult(ITestResult result) {
+        RuntimeLogStatus.Status status = new RuntimeLogStatus().logTestResult(result);
+        new LiveLogsListener().writeResultsToFile(new File(LOG_FILE), new File(TEST_CASE_TRACKER), result, new Date().toString(), status.toString());
+    }
+
 }

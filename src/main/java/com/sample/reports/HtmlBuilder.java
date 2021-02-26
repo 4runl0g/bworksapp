@@ -75,7 +75,7 @@ public class HtmlBuilder {
                         "} );</script></html>")
                 .append("<body><h3 align=\"center\"><b><img src=\"https://www.betterworks.com/wp-content/uploads/2018/08/Favicon_3-150x150.png\" width=\"50\" height=\"50\">Test Cases Results</b></h3>")
                 .append("<table id=\"example\" class=\"display responsive\" style=\"width:100%\">")
-                .append("<thead><tr><th></th><th style=\"text-align: center\">TestCaseId</th><th style=\"text-align: center\">Test Suite</th><th style=\"text-align: center\">Test Case</th><th style=\"text-align: center\">Test Parameters</th><th style=\"text-align: center\">Status</th>")
+                .append("<thead><tr><th></th><th style=\"text-align: center\">Execution Time</th><th style=\"text-align: center\">Test Suite</th><th style=\"text-align: center\">Test Case</th><th style=\"text-align: center\">Test Parameters</th><th style=\"text-align: center\">Status</th>")
                 .append("<th style=\"text-align: center\">Error Message</th><th style=\"text-align: center\">Stack Trace Exception</th></tr></thead><tbody>")
                 .append("");
         writeToFile(htmlFile, builder.toString(), false);
