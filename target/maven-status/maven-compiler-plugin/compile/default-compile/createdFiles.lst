@@ -1,6 +1,0 @@
-com/sample/driverfactory/ChromeDriverConfig.class
-com/sample/pages/LoginPage.class
-com/sample/utils/JsonUtil.class
-com/sample/dataprovider/TestDataFactory.class
-com/sample/pages/DashboardPage.class
-com/sample/pages/CreateNewPostPage.class
