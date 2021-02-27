@@ -5,12 +5,21 @@ import org.json.JSONObject;
 public class TestDataFactory {
 
     private String testCaseId;
-    private JSONObject testcaseParameters;
     private String group;
     private String category;
     private JSONObject types;
     private JSONObject options;
     private String type;
+    private String testCaseName;
+    private JSONObject testCaseParameters;
+
+    public String getTestCaseName() {
+        return testCaseName;
+    }
+
+    public void setTestCaseName(String testCaseName) {
+        this.testCaseName = testCaseName;
+    }
 
     public String getTestCaseId() {
         return testCaseId;
@@ -53,11 +62,11 @@ public class TestDataFactory {
     }
 
     public JSONObject getTestcaseParameters() {
-        return testcaseParameters;
+        return testCaseParameters;
     }
 
     public void setTestcaseParameters(JSONObject testcaseParameters) {
-        this.testcaseParameters = testcaseParameters;
+        this.testCaseParameters = testcaseParameters;
     }
 
     public String getGroup() {
@@ -68,4 +77,12 @@ public class TestDataFactory {
         this.group = group;
     }
 
+    @Override
+    public String toString() {
+        return " {" +
+                "testCaseId='" + testCaseId + '\'' +
+                ", testCaseName='" + testCaseName + '\'' +
+                ", testCaseParameters='" + testCaseParameters + '\'' +
+                '}';
+    }
 }
