@@ -1,4 +1,4 @@
-package com.sample.pages;
+package com.sample.pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

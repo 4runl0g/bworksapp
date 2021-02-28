@@ -1,10 +1,7 @@
-package com.sample.pages;
+package com.sample.pageObjects;
 
 import com.sample.dataprovider.TestDataFactory;
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,9 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.*;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class CreateNewPostPage {
 
